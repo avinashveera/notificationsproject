@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>javascript</title>
+      <meta name="viewport" content="width-device-width initial-scale=1.0">
+      <style> #list{float: right;margin-right: 50px}#list > li { list-style: none;}#list > li > a{ text-decoration: none;}button{ margin: 50px;} #menu{width: 250px;float: right;position: relative;} #menu > a{text-decoration: none;}  #aboard{ width: 250px;position: absolute; margin-top: 50px; padding: 20px;display: none;} </style>
+    </head>
+    <body>
+
+    <div id="container">
+      <div id="menu">
+
+      <ul id="list" >
+        <li><a id="notice"  href="#" onclick="shownotification(); ">notification</a></li>
+        
+      </ul>
+          <a href="#" id="aboard">  </a>
+
+      </div>
+
+      <button onclick="createnotification()">send notification</button>
+
+  </div>
+
+      <script>
+    
+       var j=0;   
+       var x=[]; 
+       function createnotification(){
+
+        var board=document.getElementById("aboard");
+      board.style.display="none";
+
+         
+      var z=document.createElement("h4");
+
+
+       r="This is notification "+ ++j ;
+        
+        z.append(r)    
+     
+        var y=document.getElementById("notice");
+        y.innerHTML="notification "+j; 
+       var show=document.getElementById("aboard");
+       show.append(z)
+
+       x.push(z);    
+      
+     }
+
+          function shownotification(){
+
+            var board=document.getElementById("aboard");
+            board.style.display="block";
+
+            var y=document.getElementById("notice");
+            y.innerHTML="notification ";
+          j=0;
+
+    }
+        </script>
+    </body>
+</html>
